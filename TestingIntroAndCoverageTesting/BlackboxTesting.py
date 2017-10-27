@@ -3,6 +3,7 @@
 
 import array
 
+
 class Queue1:
     def __init__(self, size_max):
         assert size_max > 0
@@ -212,17 +213,18 @@ def correct_test():
     assert succeeded
     assert not q.empty()
     value = q.dequeue()
-    assert value ==10
+    assert value == 10
 
     # Queue4 dequeue() of an empty queue returns False instead of None
     q = Queue4(2)
     value = q.dequeue()
-    assert value == None
+    assert value is None
 
     # Queue5 holds one less item than intended
     q = Queue5(2)
     for i in range(2):
         succeeded = q.enqueue(i)
         assert succeeded
+
 
 correct_test()

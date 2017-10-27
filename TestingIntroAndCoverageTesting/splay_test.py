@@ -1,5 +1,6 @@
 import unittest
-from SplayTreeFullStatementCoverage import SplayTree
+
+from TestingIntroAndCoverageTesting.SplayTreeFullStatementCoverage import SplayTree
 
 
 class TestCase(unittest.TestCase):

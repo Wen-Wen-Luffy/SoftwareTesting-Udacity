@@ -61,7 +61,7 @@ def add8(a0,a1,a2,a3,a4,a5,a6,a7,b0,b1,b2,b3,b4,b5,b6,b7,c0):
     return (s1,s2,s3,s4,s5,s6,s7,s8,c8)
 
 def split(n):
-    return (n&0x1, n&0x2, n&0x4, n&0x8, n&0x10, n&0x20, n&0x40, n&0x80)
+    return (bool(n&0x1), bool(n&0x2), bool(n&0x4), bool(n&0x8), bool(n&0x10), bool(n&0x20), bool(n&0x40), bool(n&0x80))
 
 def glue(s0, s1, s2, s3, s4, s5, s6, s7, c):
     t = 0
@@ -88,6 +88,8 @@ def glue(s0, s1, s2, s3, s4, s5, s6, s7, c):
 def myadd(a, b):
     (a0, a1, a2, a3, a4, a5, a6, a7) = split(a)
     (b0, b1, b2, b3, b4, b5, b6, b7) = split(b)
+    print(split(a))
+    print(split(b))
     (s0, s1, s2, s3, s4, s5, s6, s7, c) = add8(a0, a1, a2, a3, a4, a5, a6, a7, b0, b1, b2, b3, b4, b5, b6, b7, False)
     return glue(s0, s1, s2, s3, s4, s5, s6, s7, c)
 
@@ -105,7 +107,8 @@ def myadd(a, b):
 #
 # testExhaustive()
 
+
 myadd(0, 0)
-myadd(0, 1)
-myadd(255, 255)
+# myadd(0, 1)
+print(myadd(255, 255))
 

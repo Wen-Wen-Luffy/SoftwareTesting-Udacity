@@ -19,6 +19,7 @@
 # If you have any questions, please don't hesitate
 # to ask in the forums!
 
+
 class Node:
     def __init__(self, key):
         self.key = key
