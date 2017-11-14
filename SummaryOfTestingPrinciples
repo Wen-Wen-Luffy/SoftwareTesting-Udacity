@@ -1,0 +1,24 @@
+Summary of Testing Principles
+
+1. Testers must want software to fail
+2. Testers are detectives: they must be observant for suspicious behavior and anomalies in the S.U.T.
+3. All available test oracles should be used in testing
+4. Test cases should contain values selected from the entire input domain
+5. Interface that cross a trust boundary need to be tested with representable values, not just those from the ostensible input domain
+6. A little brute force goes a long way
+    1. Sometimes, selected interfaces can be exhaustively tested
+    2. almost everything else can be randomly tested
+7. Quality cannot be tested into bad software; in contrast, testable software has:
+    1. No hidden coupling, side channels
+    2. Few variables exposed to concurrent access
+    3. Few globals shared between modules
+    4. No pointer soup
+8. Code should be self-checking, whenever possible, using lots of assertions; however:
+    1. These assertions are not used for error-checking
+    2. Assertions must never be side effecting
+    3. Assertions should never be trivial or silly
+9. When appropriate, all three kinds of input should be used as a basis for testing:
+    1. APIs that are provided by the S.U.T. can be tested directly
+    2. APIs used by the S.U.T. can be tested using fault injection
+    3. Non-functional inputs
+10. Failed coverage items do not provide a mandate to cover the failed item, but rather give clues to ways in which the tests are inadequate

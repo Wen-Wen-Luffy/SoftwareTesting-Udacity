@@ -128,7 +128,7 @@ def check_sudoku(grid):
 
 
 import copy
-import sys
+# import sys
 
 
 def solve_sudoku (__grid):
@@ -138,6 +138,7 @@ def solve_sudoku (__grid):
     if res is None or res is False:
         return res
 
+    # grid = __grid[:] 这个写法会有错误！
     grid = copy.deepcopy(__grid)
 
     # find the first 0 element an change it to each of 1..9,
@@ -158,8 +159,8 @@ def solve_sudoku (__grid):
 
 
 def print_sudoku(grid):
-    for row in range(0, 9):
-        print(grid[row])
+    for row in grid:
+        print(row)
 
 
 print(solve_sudoku(ill_formed)) # --> None

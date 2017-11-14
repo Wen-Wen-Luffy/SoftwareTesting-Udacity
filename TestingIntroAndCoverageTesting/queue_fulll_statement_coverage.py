@@ -111,5 +111,6 @@ def test():
     assert result == 20
     q.checkRep()
 
+
 test()
 
